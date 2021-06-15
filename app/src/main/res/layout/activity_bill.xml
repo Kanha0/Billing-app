@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bill">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/neo_agrotech"
+        android:textColor="@color/logoColor"
+        android:textSize="30sp"
+
+        android:textStyle="bold|italic"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:hint="@string/date"
+        android:importantForAutofill="yes"
+        android:inputType="text"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:textSize="15sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+    <!--Heading of Index-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/indexparticulars"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+
+    <!--        android:onClick="snclicked"-->
+
+    <!--        android:text="S.N."-->
+    <!--        android:textSize="15sp"-->
+
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textStyle="bold|italic"-->
+
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/GSTIN" />-->
+
+    <TextView
+        android:id="@+id/indexparticulars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="         PARTICULARS        "
+        android:textColor="@color/black"
+        android:textSize="15sp"
+
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/indexhsncode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="HSN Code"
+        android:textColor="@color/black"
+
+
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/indexparticulars" />
+
+    <TextView
+        android:id="@+id/indexrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Rate"
+        android:textColor="@color/black"
+
+
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/indexparticulars" />
+
+    <TextView
+        android:id="@+id/indexquantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Quantity"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        android:layout_marginRight="1dp"
+
+
+        app:layout_constraintStart_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="@+id/indexparticulars" />
+
+    <!--    //product list dynamic linear layout-->
+    <LinearLayout
+        android:id="@+id/layoutlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/indexparticulars">
+
+    </LinearLayout>
+
+    <!--add button-->
+    <Button
+        android:id="@+id/add"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+
+
+        android:background="@drawable/round_grey"
+        android:drawableRight="@drawable/ic_baseline_add_24"
+
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutlist" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_primary"
+        android:textColor="@color/white"
+        android:onClick="submitData"
+        android:textStyle="bold"
+        android:layout_marginBottom="100dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="175dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="252dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="291dp" />
+
+    <TextView
+        android:id="@+id/instructionBcgst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:ems="5"
+        android:layout_marginLeft="57dp"
+        android:padding="5dp"
+
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+
+
+
+        android:text="CGST...% ="
+        app:layout_constraintEnd_toStartOf="@+id/Bcgst"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toTopOf="@+id/submit" />
+
+    <EditText
+        android:id="@+id/Bcgst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+
+        android:text="0"
+
+        android:padding="5dp"
+        android:ems="4"
+
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toTopOf="@+id/submit" />
+
+    <TextView
+        android:id="@+id/instructionBsgst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:ems="5"
+
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+
+        android:text="SGST...% ="
+        app:layout_constraintEnd_toEndOf="@+id/instructionBcgst"
+        app:layout_constraintStart_toStartOf="@+id/instructionBcgst"
+        app:layout_constraintTop_toBottomOf="@+id/instructionBcgst" />
+
+    <EditText
+        android:id="@+id/Bsgst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="0"
+
+        android:padding="5dp"
+        android:ems="4"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/Bcgst"
+        app:layout_constraintStart_toStartOf="@+id/Bcgst"
+        app:layout_constraintTop_toBottomOf="@+id/Bcgst" />
+
+    <TextView
+        android:id="@+id/instructionBigst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:ems="5"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="IGST...% ="
+
+        app:layout_constraintEnd_toEndOf="@+id/instructionBsgst"
+        app:layout_constraintStart_toStartOf="@+id/instructionBcgst"
+        app:layout_constraintTop_toBottomOf="@+id/instructionBsgst" />
+
+    <EditText
+        android:id="@+id/Bigst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="0"
+        android:padding="5dp"
+        android:ems="4"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/Bcgst"
+        app:layout_constraintStart_toStartOf="@+id/Bcgst"
+        app:layout_constraintTop_toBottomOf="@+id/Bsgst" />
+
+    <ImageView
+        android:id="@+id/calendar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:tooltipText="Select Date"
+
+        app:layout_constraintBottom_toBottomOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toTopOf="@+id/date"
+        android:src="@drawable/ic_baseline_today_24" />
+
+
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline5"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintGuide_begin="187dp" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
